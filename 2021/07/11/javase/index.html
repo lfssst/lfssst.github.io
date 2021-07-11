@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Bronjie">
+    <meta name="keywords" content="javase, Bronjie">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Bronjie</title>
+    <title>javase | Bronjie</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,7 +315,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">javase</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-07
+                    2021-07-11
                 </div>
                 
 
@@ -464,20 +464,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="javase（基础）"><a href="#javase（基础）" class="headerlink" title="javase（基础）"></a>javase（基础）</h1><h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><h3 id="String的引用"><a href="#String的引用" class="headerlink" title="String的引用"></a>String的引用</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>sxu<span class="token punctuation">.</span>text<span class="token punctuation">;</span>
 
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">string</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        String name <span class="token operator">=</span> <span class="token string">"张三李四王二麻子赵六"</span><span class="token punctuation">;</span>
+        String str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"张三李四王二麻子赵六"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="String的类内方法"><a href="#String的类内方法" class="headerlink" title="String的类内方法"></a>String的类内方法</h3><h4 id="charAt"><a href="#charAt" class="headerlink" title="charAt"></a>charAt</h4><p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121152447068.png" alt="image-20210121152447068"></p>
+<p>查看某位置上的元素</p>
+<h4 id="indexOf（）"><a href="#indexOf（）" class="headerlink" title="indexOf（）"></a>indexOf（）</h4><p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121152754690.png" alt="image-20210121152754690"></p>
+<p>返回某元素在String上的位置</p>
+<h4 id="length（）"><a href="#length（）" class="headerlink" title="length（）"></a>length（）</h4><p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121153004270.png" alt="image-20210121153004270"></p>
+<p>返回数组的长度</p>
+<h4 id="replacce"><a href="#replacce" class="headerlink" title="replacce"></a>replacce</h4><p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121153953091.png" alt="image-20210121153953091"></p>
+<p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121154520725.png" alt="image-20210121154520725"></p>
+<p>把李换成了赵 替换原有的字符串</p>
+<h4 id="replaceall（）"><a href="#replaceall（）" class="headerlink" title="replaceall（）"></a>replaceall（）</h4><p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121155146885.png" alt="image-20210121155146885"></p>
+<p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121155243939.png" alt="image-20210121155243939"></p>
+<p>把目标字符 字符串进行替换</p>
+<h4 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h4><p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121160234354.png" alt="image-20210121160234354"></p>
+<p>1.从5开始截取字符串</p>
+<p>2.截取5-10</p>
+<p>都是前闭后</p>
+<h4 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h4><p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121161118605.png" alt="image-20210121161118605"></p>
+<p>两种拼接的方法 1.用concat 拼接字符串在原字符串的后面</p>
+<p>​                           2.直接用+拼接</p>
+<h4 id="split"><a href="#split" class="headerlink" title="split"></a>split</h4><p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121164329075.png" alt="image-20210121164329075"></p>
+<p>以李为标志把字符串切分</p>
+<h4 id="equal"><a href="#equal" class="headerlink" title="equal"></a>equal</h4><p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121164524519.png" alt="image-20210121164524519"></p>
+<p>比较两个字符串是否相等</p>
+<p>要注意如果用==比较值不相同</p>
+<p><img src="C:\Users\10044\AppData\Roaming\Typora\typora-user-images\image-20210121164700601.png" alt="image-20210121164700601"></p>
+<p>1.对基本类型而言，使用==进行比较，是直接比较两个数据类型之间的数值</p>
+<p>2.对于引用类型而言，使用==进行比较，是比较的两个数据类型之间的地址</p>
+<h2 id="arrylist"><a href="#arrylist" class="headerlink" title="arrylist"></a>arrylist</h2>
                 
             </div>
             <hr/>
@@ -503,7 +526,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lfssst.github.io/2021/07/07/hello-world/">https://lfssst.github.io/2021/07/07/hello-world/</a>
+                    <a href="https://lfssst.github.io/2021/07/11/javase/">https://lfssst.github.io/2021/07/11/javase/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -710,9 +733,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/07/11/javase/">
                     <div class="card-image">
@@ -730,9 +754,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -741,6 +765,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -748,7 +773,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2021/07/07/hello-world/">
@@ -778,7 +803,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
