@@ -8,7 +8,7 @@
       <link href="/2021/07/12/javase/"/>
       <url>/2021/07/12/javase/</url>
       
-        <content type="html"><![CDATA[<p>123456</p><p><img src="D:\BOLG\hexoblog\source_posts\javase\1.jpg" alt="1"></p><p>！<a href=":">text</a></p><pre class=" language-m"><code class="language-m">![图片标题](:title/:name.jpg)</code></pre><p><img src="D:\BOLG\hexoblog\source_posts\javase\1.jpg" alt="1"></p><img src="/2021/07/12/javase/1.jpg" class="" title="This is an example image">]]></content>
+        <content type="html"><![CDATA[<p>123456</p><p><img src="D:\BOLG\hexoblog\source_posts\javase\1.jpg" alt="1"></p><p>！<a href=":">text</a></p><pre class=" language-m"><code class="language-m">![图片标题](:title/:name.jpg)</code></pre><p><img src="javase%5C1.jpg" alt="1"></p><img src="/2021/07/12/javase/1.jpg" class="" title="This is an example image">]]></content>
       
       
       
