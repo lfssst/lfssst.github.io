@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="初探云计算, Bronjie">
+    <meta name="keywords" content="MySQL海量数据设计实践, Bronjie">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>初探云计算 | Bronjie</title>
+    <title>MySQL海量数据设计实践 | Bronjie</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">初探云计算</h1>
+                    <h1 class="description center-align post-title">MySQL海量数据设计实践</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">
-                                <span class="chip bg-color">云计算</span>
+                            <a href="/tags/MySQL/">
+                                <span class="chip bg-color">MySQL</span>
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-12
+                    2021-07-15
                 </div>
                 
 
@@ -468,26 +468,177 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="初探云计算"><a href="#初探云计算" class="headerlink" title="初探云计算"></a>初探云计算</h1><h2 id="云计算现状"><a href="#云计算现状" class="headerlink" title="云计算现状"></a>云计算现状</h2><p>2006年搜索引擎大会首次提出，中国已经是亿万级市场，服务都在上云，前景可期</p>
-<h2 id="云计算前景和未来"><a href="#云计算前景和未来" class="headerlink" title="云计算前景和未来"></a>云计算前景和未来</h2><p>未来云计算和大数据将成为社会的一种生产资料，3-5年赶上技术浪潮享受技术红利，</p>
-<img src="/2021/07/12/%E5%88%9D%E6%8E%A2%E4%BA%91%E8%AE%A1%E7%AE%97/1.jpg" class="" title="云计算前景和未来">
+                <h1 id="MySQL海量数据设计实践"><a href="#MySQL海量数据设计实践" class="headerlink" title="MySQL海量数据设计实践"></a>MySQL海量数据设计实践</h1><h2 id="MySQL存储引擎原理拆解以及设计深度剖析"><a href="#MySQL存储引擎原理拆解以及设计深度剖析" class="headerlink" title="MySQL存储引擎原理拆解以及设计深度剖析"></a>MySQL存储引擎原理拆解以及设计深度剖析</h2><h3 id="页结构"><a href="#页结构" class="headerlink" title="页结构"></a>页结构</h3><p>页头：记录页面的控制信息，共占56字节，包括页的左右兄弟页面指针（双向链表）、页面空间使用情况等。</p>
+<p>最小最大虚记录：比页内最大小主键还大小确定一个范围，即一个页的空间，查看时，根据和最大最小虚记录的比较结果判定是否在这个空间内。</p>
+<p>记录堆：行记录存储区，分为有效记录和已删除记录</p>
+<p>自由空间链表：存储记录堆中，存储的过程中可定有被删除的记录，自由空间链表的作用就是吧删除的记录链起来，方便被删除的记录有什么，找到这些被删除的空间的目的是，想要利用这些空闲的空间</p>
+<p>Slot区：</p>
+<h3 id="页内记录维护"><a href="#页内记录维护" class="headerlink" title="页内记录维护"></a>页内记录维护</h3><img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/2.jpg" class="" title="页内维护记录">
 
-<h2 id="什么是云计算"><a href="#什么是云计算" class="headerlink" title="什么是云计算"></a>什么是云计算</h2><p>​       云计算（cloud computing）是分布式计算的一种，指的是通过网络“云”将巨大的数据计算处理程序分解成无数个小程序，然后，通过多部服务器组成的系统进行处理和分析这些小程序得到结果并返回给用户。计算早期，简单地说，就是简单的分布式计算，解决任务分发，并进行计算结果的合并。因而，云计算又称为网格计算。通过这项技术，可以在很短的时间内（几秒钟）完成对数以万计的数据的处理，从而达到强大的网络服务。</p>
-<p>​       形象的比喻云服务如同建设一个水厂电站，使用的时候只需要接入就行，之前需要自行的发电，打井</p>
-<p>1、基础设施即服务（IaaS)</p>
-<p>​       基础设施即服务是主要的服务类别之一，它向云计算提供商的个人或组织提供虚拟化计算资源，如虚拟机、存储、网络和操作系统。 （基础设施–硬件）</p>
-<p>2、平台即服务(PaaS)</p>
-<p>​       平台即服务是一种服务类别，为开发人员提供通过全球互联网构建应用程序和服务的平台。Paas为开发、测试和管理软件应用程序提供按需开发环境。 （软件==环境、服务器）</p>
-<p>3、软件即服务(SaaS)</p>
-<p>​       软件即服务也是其服务的一类，通过互联网提供按需软件付费应用程序，云计算提供商托管和管理软件应用程序，并允许其用户连接到应用程序并通过全球互联网访问应用程序。</p>
-<p><strong>瘦客户端</strong>（Thin Client）指的是在客户端-服务器网络体系中的一个基本无需<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F">应用程序</a>的计算<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%93%91%E7%BB%88%E7%AB%AF">哑终端</a>。它通过一些<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8D%8F%E8%AE%AE">协议</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>通信，进而接入<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B1%80%E5%9F%9F%E7%BD%91">局域网</a>。瘦客户端将其<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%BC%A0%E6%A0%87">鼠标</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%94%AE%E7%9B%98">键盘</a>等输入传送到服务器处理，服务器再把处理结果回传至瘦客户端显示。不同的瘦客户端可以同时登录到服务器上，模拟出一个相互独立又在服务器上的工作环境；与此相反，普通客户端会尽可能多地进行本地数据处理，与服务器（或其他客户端）的通信中只传送必要的通信数据。（不用安装操作系统在云端，保证了开发环境相同）</p>
-<img src="/2021/07/12/%E5%88%9D%E6%8E%A2%E4%BA%91%E8%AE%A1%E7%AE%97/2.jpg" class="" title="什么是云计算">
+<p>B+tree</p>
+<p>聚簇索引：索引和数据是在一起等</p>
+<h4 id="顺序保证"><a href="#顺序保证" class="headerlink" title="顺序保证"></a>顺序保证</h4><h5 id="物理有序："><a href="#物理有序：" class="headerlink" title="物理有序："></a>物理有序：</h5><p>  一开始放入数据，主键为10，之后放入的数据主键为9，为了保证物理有序，就要向后移动10，再插入9，同理如果插入是8，就要移动9、10，同样删除的过程也涉及到复制的过程这样的效率就会很低。但是查询的数独就很快，直接指针偏移，可以采用二分查找。</p>
+<h5 id="逻辑有序：（链表data域，指针域）"><a href="#逻辑有序：（链表data域，指针域）" class="headerlink" title="逻辑有序：（链表data域，指针域）"></a>逻辑有序：（链表data域，指针域）</h5><p>  插入只需要新申请一个空间之后，修改指针域，这样插入的效率高，但是查询遍历的过程很慢。</p>
+<p>MySQL innodb 显然使用的是逻辑有序，查询可以优化，显然物理实在在插入的过程很困难。</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/3.jpg" class="" title="页内单项链表，页见双向链表">
 
-<h2 id="如何学习"><a href="#如何学习" class="headerlink" title="如何学习"></a>如何学习</h2><p>《计算机组成原理》</p>
-<p>《深度实践KVM》</p>
-<p>《云计算架构师》</p>
-<p>《云计算服务模式》</p>
-<img src="/2021/07/12/%E5%88%9D%E6%8E%A2%E4%BA%91%E8%AE%A1%E7%AE%97/3.jpg" class="" title="如何学习">
+<p>页面内单向链表，保证数据有序，页面间双向链表这样就把数据有序的链接起来了</p>
+<p>根据这个原理，之前的聚簇索引就可以加入双向链表</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/4.jpg" class="" title="双向链表页面维护记录">
+
+<p>​         可用的空间有自由空间链表和未使用空间，首先要考虑把已删除的空间利用起来，但是也会产生碎片的，频繁的插入删除的表需要定期的做收缩</p>
+<h4 id="页内查询"><a href="#页内查询" class="headerlink" title="页内查询"></a>页内查询</h4><p>逻辑连续 遍历</p>
+<p>物理连续 二分查找，但是二分查找需要每个数据大小是等长的，通过偏移量找具体的位置。同时也可见一定是逻辑有序</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/5.jpg" class="" title="页内查询">
+
+<p>最下方是Solt，分成若干个槽位，每个槽位又对应着一个链表，这样可以根据槽位进行二分查询，找到数据可能在的区间。再小范围的便利一下（类似于跳表）</p>
+<h3 id="MySQL-InnoDB存储引擎内存管理"><a href="#MySQL-InnoDB存储引擎内存管理" class="headerlink" title="MySQL InnoDB存储引擎内存管理"></a>MySQL InnoDB存储引擎内存管理</h3><h5 id="1预分配内存空间"><a href="#1预分配内存空间" class="headerlink" title="1预分配内存空间"></a>1预分配内存空间</h5><img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/6.jpg" class="" title="内存空间">
+
+<h5 id="2数据以页为单位加载"><a href="#2数据以页为单位加载" class="headerlink" title="2数据以页为单位加载"></a>2数据以页为单位加载</h5><p>每次读取一页的数据到内存当中</p>
+<p>为什么是一条：因为减少i/o操作，提高i/o性能，可能访问一页的多条数据</p>
+<h5 id="3数据内外存交换"><a href="#3数据内外存交换" class="headerlink" title="3数据内外存交换"></a>3数据内外存交换</h5><p>内存满了，内外存交换，把内存中的变换的部分写回磁盘，不变的部分释放后加载新的页，读的就不需要写回磁盘</p>
+<h4 id="InnoDB技术点"><a href="#InnoDB技术点" class="headerlink" title="InnoDB技术点"></a>InnoDB技术点</h4><p>内存池：预分配的内存</p>
+<p>内存页面管理：</p>
+<p>   页面的映射：磁盘数据加载到内存，这个关系不是静态的关系是动态的过程，形成映射表，记录内存和磁盘的关系</p>
+<p>   页面管理：空闲页，数据页（clean page），脏页（加载后被修改的页，要刷回磁盘）</p>
+<p>内存淘汰：是否刷盘</p>
+<p>页面淘汰 LRU 热数据放到头，冷数据放到尾</p>
+
+
+<p>首先访问P2页面把P2放到头部，当需要访问新的页面，而内存空间已经满了，只能将尾部的P1释放掉，将P7I/O到头部</p>
+<p>思考：全表扫描堆内存的影响</p>
+<p>eg：500g数据 50g内存（热）</p>
+<p>select * from 表，整个内存都是表的数据，这样内存全部的热数据都会被淘汰掉，这样叫内存失效或者内存污染，MySQL做全表扫描很慢，这个慢是i/o慢，select执行完之后又会很快，这说明热数据并没有被淘汰</p>
+<p>解决方案：避免热数据被淘汰</p>
+<p>1.访问时间+频率</p>
+<p> 页面  </p>
+<p>A—— —— —— - —— ——</p>
+<p>B- -     -   - – - - - – - -   -   - - -  - -  -</p>
+<p>C-     -      -     -     -     -     -   -      -     -  -</p>
+<p>此时按照传统LRU会淘汰A，但是显然我们需要淘汰的是C，Redis做到了按照频率淘汰，会按照频率增加，不访问又会下降</p>
+<p>2.两个LRU表</p>
+<p>一级放，热度到一定级别的时候加入，二级的LRU，可以认为是热数据表</p>
+<p>InnoDB MySQL是怎么解决的</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/8.jpg" class="" title="InnoDB MySQL 双LRU解决方案">
+
+<p>Buffer Pool ：预分配的内存</p>
+<p>Page：Buffer Pool 的最小单位</p>
+<p>Free list：空闲page组成的链表</p>
+<p>Flush list： 脏页链表</p>
+<p>Page hash 表：维护内存Page和文件page的映射关系</p>
+<p>LRU：内存淘汰算法 链接起来clean page和dirty page进行LRU 但是是优化的</p>
+<h3 id="Mysql-内存管理—-LRU"><a href="#Mysql-内存管理—-LRU" class="headerlink" title="Mysql 内存管理—-LRU"></a>Mysql 内存管理—-LRU</h3><img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/9.jpg" class="" title="MySQL 内存管理LRU">
+
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/10.jpg" class="" title="MySQL 内存管理LRU">
+
+<p>页面装载：先从Free list找一个空闲空间free page，建立映射关系就可以写入数据，插入LRU-old当中，即插入冷表的头部</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/11.jpg" class="" title="MySQL 内存管理LRU淘汰策略">
+
+<p>如果没有空闲位置LRU-old的尾部淘汰，如果刚好尾部数据正在使用，找一个dirty page进行Flush操作刷盘，释放内存</p>
+<p><strong>Free list 取&gt;LRU-old 淘汰&gt;LRU Flush</strong></p>
+<p>dirty page进行Flush操作刷盘，释放内存,讲dirty page变为clean page，是放在LRU尾部？还是直接放在Freelist。</p>
+<p>5.2之前是放在尾部淘汰一次，目前使用的是直接放Free list</p>
+<h5 id="位置移动"><a href="#位置移动" class="headerlink" title="位置移动"></a>位置移动</h5><p>1.从old到new，设想访问频率高的就放到new区，但是如果select*，加载一个页面会在短时间内多次访问一个页面，这样还是会把素有的new全部替换造成内存失效，内存污染。</p>
+<p>所以移动的时机要考虑</p>
+<p>innodb_old_blocks_time 大于这个时间有机会进入new区，大于时间还有人访问，这样select 很快访问完就不去访问了</p>
+<p>2.从new到old     有页面从old到new 但是midpoint始终保证5:3自然而言new到尾部就进入到old</p>
+<h5 id="LRU-new到操作"><a href="#LRU-new到操作" class="headerlink" title="LRU_new到操作"></a>LRU_new到操作</h5><p>链表有访问就放到头部？要考虑lock！MySQL设计思路：减少移动到次数</p>
+<p>两个重要的参考：1.freed_page_clock:Buffer Pool淘汰页数。</p>
+<p>​                               2.LRU_new长度的1/4</p>
+<p>LRU_new中的A页面被访问，移动到head，此时的freed_page_clock为10000，上次移动到head的freed_page_clock是8000差值是2000用差值和LRU-new长度的1/4比较，如果大于就需要移动一次，这样可以保证数据不被误淘汰，也能减少移动的次数。</p>
+<h2 id="MySQL事物实现原理拆解以及设计深度剖析"><a href="#MySQL事物实现原理拆解以及设计深度剖析" class="headerlink" title="MySQL事物实现原理拆解以及设计深度剖析"></a>MySQL事物实现原理拆解以及设计深度剖析</h2><h3 id="MySQL事务的基本概念"><a href="#MySQL事务的基本概念" class="headerlink" title="MySQL事务的基本概念"></a>MySQL事务的基本概念</h3><h4 id="事务特性"><a href="#事务特性" class="headerlink" title="事务特性"></a>事务特性</h4><ol>
+<li>A 原子性 （atomicity）:强调事务的不可分割. 全部成功或者失败</li>
+<li>C 一致性 （consistency）:事务的执行的前后数据的完整性保持一致. 通过AID保证</li>
+<li>I 隔离性 （isolation）:一个事务执行的过程中,不应该受到其他事务的干扰 并行事物之间互不干扰</li>
+<li>D 持久性（durability） :事务一旦结束,数据就持久到数据库 事物提交之后永久生效</li>
+</ol>
+<h4 id="事务并发问题（隔离）"><a href="#事务并发问题（隔离）" class="headerlink" title="事务并发问题（隔离）"></a>事务并发问题（隔离）</h4><p>赃读（Dirty Read）：读到未提交的数据。</p>
+<p>不可重复读（Non-repeatable read）：两次读取结果不同</p>
+<p>幻读（Phantom read）：select操作得到的结果所表征的状态无法支撑后续的业务操作（读到数据蒙圈，不知道干什么）</p>
+<h4 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h4><p><strong>Read Uncommitted（读取未提交内容）</strong></p>
+<p>在该隔离级别，所有事务都可以看到其他未提交事务的执行结果。本隔离级别很少用于实际应用，因为它的性能也不比其他级别好多少。读取未提交的数据，也被称之为脏读（Dirty Read）。</p>
+<p>eg：T1读区数据100，T2修改这个数据为200，T1再次读区数据为200，T2 rollback 100</p>
+<p><strong>Read Committed（读取提交内容）</strong>读已提交</p>
+<p>这是大多数数据库系统的默认隔离级别（但不是MySQL默认的）。它满足了隔离的简单定义：一个事务只能看见已经提交事务所做的改变。这种隔离级别 也支持所谓的不可重复读（Nonrepeatable Read），因为同一事务的其他实例在该实例处理其间可能会有新的commit，所以同一select可能返回不同结果。</p>
+<p>eg：T1度数据100，T2 update 200，T1还会读到100，直到T2commit200，T1会读到数据200，可见T1点数据受到了干扰。</p>
+<p><strong>Repeatable Read（可重读）</strong> </p>
+<p>这是MySQL的默认事务隔离级别，它确保同一事务的多个实例在并发读取数据时，会看到同样的数据行。不过理论上，这会导致另一个棘手的问题：幻读 （Phantom Read）。简单的说，幻读指当用户读取某一范围的数据行时，另一个事务又在该范围内插入了新行，当用户再读取该范围的数据行时，会发现有新的“幻影” 行。InnoDB和Falcon存储引擎通过多版本并发控制（MVCC，Multiversion Concurrency Control）机制解决了该问题。</p>
+<p>eg：T1度数据100，T2 update 200，T1还会读到100，直到T2commit200，T1还会读到数据100，两次当前读不回读到不同数据</p>
+<p><strong>Serializable（可串行化）</strong>没人用</p>
+<p>这是最高的隔离级别，它通过强制事务排序，使之不可能相互冲突，从而解决幻读问题。简言之，它是在每个读的数据行上加上共享锁。在这个级别，可能导致大量的超时现象和锁竞争。</p>
+<h4 id="事务实现原理"><a href="#事务实现原理" class="headerlink" title="事务实现原理"></a>事务实现原理</h4><h5 id="MVCC"><a href="#MVCC" class="headerlink" title="MVCC"></a>MVCC</h5><p>对版本并发控制</p>
+<p>当前读 读存储引擎读数据</p>
+<p>快照读 历史版本</p>
+<p>一个uid会对应多个历史版本，历史版本由GB-TRX-ID记录，DB-ROLL-PTR记录上一条数据读存储位置，可以找到快照读位置，undolog中，存储引擎只存最新的一个数据。</p>
+<p>解决读-写冲突</p>
+<p>隐藏列</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/10.jpg" class="" title="Read View">
+
+<p>Read View </p>
+<p>在执行select的同时，生成一个活跃事务列表eg【9，100，110，120】，此时可见性判断，小于9时已提交的，是可以看到的，大于9小于121是还未提交的事务，在事务链表中，要回退上一版本，不在事务链表，说明已经提交可以看到，大于121时创建快照之后创建的事务。想要回滚找历史版本。</p>
+<h5 id="undo-log-回滚机制-历史版本都会存储在undolog"><a href="#undo-log-回滚机制-历史版本都会存储在undolog" class="headerlink" title="undo log 回滚机制 历史版本都会存储在undolog"></a>undo log 回滚机制 历史版本都会存储在undolog</h5><p>回滚日志</p>
+<p>保证事务原子性</p>
+<p>实现数多版本：mvcc的历史版本的实现原则</p>
+<p>delete undo log：用于回滚，提交即清理</p>
+<p>update undo log：用于回滚，同时实现快照读，不能随便删除，因为要快照读</p>
+<p>思考：undolog如何清理：依据系统活跃的最小事务的id Read View，都能看见了就没有必要存储历史版本了。 </p>
+<p>​          为什么innodb count （*）这么慢？</p>
+<h5 id="redo-log"><a href="#redo-log" class="headerlink" title="redo log"></a>redo log</h5><p> 实现事务的持久性</p>
+<p>记录修改</p>
+<p>用于异常恢复</p>
+<p>循环写文件</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/13.jpg" class="" title="循环写文件">
+
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/14.jpg" class="" title="数据处理过程">
+
+<p>用户client发起请求到sever层转成SQL命令，修改数据命令，先记录undo log，历史版本用于回滚数据，更新内存数据，先把修改数据这件事写到redo log，更新完成，server执行一条提交一条，commit redo log刷盘，commit日志</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/15.jpg" class="" title="刷盘时机">
+
+<h6 id="redo——log刷盘时机"><a href="#redo——log刷盘时机" class="headerlink" title="redo——log刷盘时机"></a>redo——log刷盘时机</h6><p>0: 写Buffer Pool，commit写内存Buffer，每秒聚合一次写文件，并刷盘，也就少受每秒刷盘最多丢1秒，性能极高，不安全</p>
+<p>1：每次commit都刷盘，最严格，效率极低，最多丢1条。</p>
+<p>2:每次commit提交写文件但是写的是OS Buffer每一秒刷一次盘，性能折中。</p>
+<h6 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h6><p>体积小，日志的体积很小，页面的记录很多，记录页的修改，比写入页的代价低，小代价记录更新</p>
+<p>末尾追加，随机写变顺序写入，发生改变的页固定不变</p>
+<h2 id="MySQL锁实现原理拆解以及深度剖析"><a href="#MySQL锁实现原理拆解以及深度剖析" class="headerlink" title="MySQL锁实现原理拆解以及深度剖析"></a>MySQL锁实现原理拆解以及深度剖析</h2><h3 id="锁粒度"><a href="#锁粒度" class="headerlink" title="锁粒度"></a>锁粒度</h3><p>行级锁</p>
+<p>  作用在索引上</p>
+<p>  聚簇索引&amp;二级索引</p>
+<p>eg ： delete from user where uid（pk）=134 ，锁索引和phone ，或者通过二级索引锁</p>
+<p>前提是唯一索引，所以分析锁要有前提</p>
+<p>RC： delete from user where uid（pk）=134 ，之后插入134/114，这时候会读到114这个就出现了幻读，不可重复读，RC隔离级别</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/16.jpg" class="" title="RC 不可重复读">
+
+<p>RR： delete from user where uid（pk）=134，在红色三角出插入gap锁间隙锁  </p>
+<p>GAP锁锁住的锁</p>
+<p>【131，140】-【134，130】</p>
+<p>【134，130】-【134，150】 134 任何记录插不进去</p>
+<p>【134，150】-【137，100】</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/17.jpg" class="" title="RR可重复读 GAPj间隙锁">
+
+<p>间隙锁 两次当前读之间，其他的事务不回插入新的满足条件的记录</p>
+<p>解决课重复读模式下的幻读问题，两次当前读读幻读问题</p>
+<p>GAP锁不是加在记录上</p>
+<p>GAP锁锁住的位置，是两条记录之间的GAP</p>
+<p>保证两次当前读返回一致的记录</p>
+<p>表级锁</p>
+<p>线上锁表，只有全表扫面</p>
+<p>select from user where phone = 134</p>
+<p>phone没有建索引会全表扫描，每一个间隙建立GAP锁，所有记录加锁返回，然后有MySQL Server 进行行过滤。但是server会释放锁</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/18.jpg" class="" title="全表扫描">
+
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>共享锁（s）</p>
+<p>  读锁 可以同时被多个事务获取，阻止其他事务对记录的修改</p>
+<p>排他锁（x）</p>
+<ul>
+<li>写锁 只能被一个事务获取，允许获得锁的事务修改数据 </li>
+</ul>
+<p>多有的当前读加排他锁，都有哪些是当前读 select for update，update，delete</p>
+<p>InnoDB加锁过程</p>
+<p>T1: update t user SET xx=xx where name = ‘f’</p>
+<p>T2：select * from t_user where age&gt;33 FOR UPDATE</p>
+<img src="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/19.jpg" class="" title="死锁">
+
+<p>加锁失败，事务1持有事务2的锁 ，事务2有事务2的锁，这样事务1加锁失败，事务2也加锁失败，死锁</p>
+
                 
             </div>
             <hr/>
@@ -513,7 +664,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lfssst.github.io/2021/07/12/%E5%88%9D%E6%8E%A2%E4%BA%91%E8%AE%A1%E7%AE%97/">https://lfssst.github.io/2021/07/12/%E5%88%9D%E6%8E%A2%E4%BA%91%E8%AE%A1%E7%AE%97/</a>
+                    <a href="https://lfssst.github.io/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/">https://lfssst.github.io/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -551,8 +702,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">
-                                    <span class="chip bg-color">云计算</span>
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">MySQL</span>
                                 </a>
                             
                         </div>
@@ -724,9 +875,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="MySQL海量数据设计实践">
+                        
+                        <span class="card-title">MySQL海量数据设计实践</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Bron jie
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/07/13/gitee%E4%BD%BF%E7%94%A8/">
                     <div class="card-image">
@@ -744,9 +942,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -762,43 +960,6 @@
                         <span class="chip bg-color">版本控制</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/07/12/javase/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="javase">
-                        
-                        <span class="card-title">javase</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-12
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Bron jie
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
