@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="企业千亿级海量数据并发分库分表设计方法论提炼篇, Bronjie">
+    <meta name="keywords" content="leecode001, Bronjie">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>企业千亿级海量数据并发分库分表设计方法论提炼篇 | Bronjie</title>
+    <title>leecode001 | Bronjie</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">企业千亿级海量数据并发分库分表设计方法论提炼篇</h1>
+                    <h1 class="description center-align post-title">leecode001</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/MySQL/">
-                                <span class="chip bg-color">MySQL</span>
+                            <a href="/tags/leecode%E5%88%B7%E9%A2%98/">
+                                <span class="chip bg-color">leecode刷题</span>
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-07-22
                 </div>
                 
 
@@ -468,108 +468,56 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="企业千亿级海量数据并发分库分表设计方法论提炼篇"><a href="#企业千亿级海量数据并发分库分表设计方法论提炼篇" class="headerlink" title="企业千亿级海量数据并发分库分表设计方法论提炼篇"></a>企业千亿级海量数据并发分库分表设计方法论提炼篇</h1><h2 id="千亿级海量数据高并发场景主键设计选择"><a href="#千亿级海量数据高并发场景主键设计选择" class="headerlink" title="千亿级海量数据高并发场景主键设计选择"></a>千亿级海量数据高并发场景主键设计选择</h2><h3 id="索引原理分析"><a href="#索引原理分析" class="headerlink" title="索引原理分析"></a>索引原理分析</h3><p>聚簇索引</p>
-<img src="/2021/07/20/%E4%BC%81%E4%B8%9A%E5%8D%83%E4%BA%BF%E7%BA%A7%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA%E6%8F%90%E7%82%BC%E7%AF%87/0.jpg" class="" title="聚簇索引">
+                <h1 id="Leecode-001"><a href="#Leecode-001" class="headerlink" title="Leecode 001"></a>Leecode 001</h1><h2 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h2><p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p>示例 1：</p>
+<p>输入：nums = [2,7,11,15], target = 9<br>输出：[0,1]<br>解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。<br>示例 2：</p>
+<p>输入：nums = [3,2,4], target = 6<br>输出：[1,2]<br>示例 3：</p>
+<p>输入：nums = [3,3], target = 6<br>输出：[0,1]</p>
+<p>提示：</p>
+<p>2 &lt;= nums.length &lt;= 104<br>-109 &lt;= nums[i] &lt;= 109<br>-109 &lt;= target &lt;= 109<br>只会存在一个有效答案<br>进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？</p>
+<h2 id="解法一：暴击解法"><a href="#解法一：暴击解法" class="headerlink" title="解法一：暴击解法"></a>解法一：暴击解法</h2><pre><code class="java">class Solution &#123;
+    public int[] twoSum(int[] nums, int target) &#123;
+        int[] result = new int[2];
+        for(int i=0;i&lt;nums.length;i++)&#123;
+            for(int j = i + 1;j&lt;nums.length;j++)&#123;
+                if(nums[i]+nums[j] == target)&#123;
+                result[0] = i;
+                result[1] = j;
+                return result;
+                &#125;
+            &#125;
+        &#125;
+        return result;
 
-<h4 id="自增主键vs随机主键uuid"><a href="#自增主键vs随机主键uuid" class="headerlink" title="自增主键vs随机主键uuid"></a>自增主键vs随机主键uuid</h4><p>数据存储在主键索引中</p>
-<p>数据按主键顺序存储</p>
-<p>自增主键：数据顺序就锁插入顺序，写入效率很高，随机主键如果「12345」「7891011」插入12 也已经满了就只能分页才能插入12，这样就导致了写入的效率低</p>
-<p>二级索引</p>
-<img src="/2021/07/20/%E4%BC%81%E4%B8%9A%E5%8D%83%E4%BA%BF%E7%BA%A7%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA%E6%8F%90%E7%82%BC%E7%AF%87/1.jpg" class="" title="二级索引">
+    &#125;
+&#125;
+</code></pre>
+<img src="/2021/07/22/leecode001/1.jpg" class="" title="暴力解法的结果"> O（1/2n^2）
 
-<p>vlue锁主键pk，是一个值，回表，主键的聚簇索引找到位置，要查询两棵树</p>
-<p>特点</p>
-<p>​       1.除主键索引以外的索引</p>
-<p>​       2.叶子中存储的是主键的值</p>
-<p>​       3.一次查询需要走两遍索引</p>
-<p>​       4.主键大小会影响所有索引的大小,字符串作为索引，64字节的主键，二级索引也是64字节，如果主键过于大不能全部加载到内存会出现磁盘io</p>
-<p>联合索引</p>
-<img src="/2021/07/20/%E4%BC%81%E4%B8%9A%E5%8D%83%E4%BA%BF%E7%BA%A7%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA%E6%8F%90%E7%82%BC%E7%AF%87/2.jpg" class="" title="联合索引">
-
-<p>存储主键k1，k2，先比较k1，k1比较不出来比较k2，MySQL的前缀比对原则</p>
-<p>特点：</p>
-<p>1.key由多个字段组成</p>
-<p>2.最左匹配原则（比较的规则）</p>
-<p>如果不是按照最左开始查找，无法使用索引（第一个错误，错误），不能跳过中间列，某列使用范围查询，后面的列不能使用索引</p>
-<p>3.一个索引只创建一棵树</p>
-<p>4.按第一列排序，第一列相同按第二列排序</p>
-<p>eg：（A，B，C）</p>
-<p>B=xx，and，C=xx，and，A=xx 可以 顺序在查询的时候会交换</p>
-<h3 id="索引使用优化"><a href="#索引使用优化" class="headerlink" title="索引使用优化"></a>索引使用优化</h3><h4 id="存储空间"><a href="#存储空间" class="headerlink" title="存储空间"></a>存储空间</h4><p>索引文件大小</p>
-<p>字段大小-&gt;页内节点数-&gt;数的层数</p>
-<p>每页16k大小，字段越大，每页的数目越小，层数越高</p>
-<p>BIGINT类型的主键3层可以存储约10亿条数据16kb/8b（key）+8b（指针）=1k</p>
-<p>10^3 * 10^3 * 10^3  = 10亿</p>
-<p>32字节主键3层可以存储6400w</p>
-<p>所以要稍微注意下，但是实际上影响不大，这么大的数据需要分表</p>
-<h4 id="主键选择"><a href="#主键选择" class="headerlink" title="主键选择"></a>主键选择</h4><p>自增主键：写入磁盘利用率高，每次查询走两级索引</p>
-<p>随机主键：写入磁盘利用率低，每次查询走一级或者两级索引</p>
-<p>业务主键：写入、查询的磁盘利用率高，可以使用一级索引（有意义的主键）雪花算法（生成唯一id的算法，时间戳，机器编号，计数器（毫秒内）都是递增的趋势）自增主键能不用就不用</p>
-<p>联合主键：影响索引的大小，不易维护，不建议使用</p>
-<h4 id="联合索引的使用"><a href="#联合索引的使用" class="headerlink" title="联合索引的使用"></a>联合索引的使用</h4><p>按索引的区分度排序 </p>
-<p>第一列筛选出很大一部分（eg生日年会过滤掉99%）</p>
-<p>覆盖索引</p>
-<p>eg（ID uid pho）uid-&gt;pho uid-&gt;pk-&gt;pho (二级索引) （uid pho）联合索引 索引覆盖</p>
-<p>索引下推</p>
-<p>server层找搜索引擎找到相应的数据再过滤一次返回给server，条件从server层下推到搜索引擎</p>
-<p>字符串索引（最左原则，不支持%模糊索引）要设置合理的长度不需要全部比较，比较一部分字节就可以一般10个</p>
-<h4 id="索引失效的问题"><a href="#索引失效的问题" class="headerlink" title="索引失效的问题"></a>索引失效的问题</h4><p>1.区分度太低的列，回表的次数太多，之间全表扫描</p>
-<p>2.A=xx OR B=xx 5.1之前是执行全表扫面，5.1之后引入索引合并indexmerge的技术</p>
-<p>3.隐式类型转换 where mobile = ‘135xxxx’ </p>
-<p>​                           where mobile = 135xxxx 不回命中索引</p>
-<p>4.索引列包含计算 where name-20 = 30 </p>
-<p>5.数据范围影响 索引区分度过低 条件超出索引范围</p>
-<h4 id="MySQL库表设计实践"><a href="#MySQL库表设计实践" class="headerlink" title="MySQL库表设计实践"></a>MySQL库表设计实践</h4><p>联合索引：优于多列独立索引</p>
-<p>索引顺序：选择性高的在前面</p>
-<p>覆盖索引：Key里面包含要查询的数据</p>
-<p>索引顺序：索引同时满足查询和排序</p>
-<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><p>数据库字符集使用utf8mb4 要使用utf-8</p>
-<p>VARCHAR按实际需要分配长度，会放在溢出页，会导启动失败，255，i字节</p>
-<p>文本字段建议使用VARCHAR</p>
-<p>时间字段建议使用long</p>
-<p>bool字段建议使用tinyint</p>
-<p>枚举字段建议使用tinyint</p>
-<p>交易金额建议使用long</p>
-<p>禁止使用“%”前导的查询</p>
-<p>禁止在索引列进行数学计算，会导致索引失效</p>
-<p>   select * from t1 where id+1&gt;1121 不会使用索引</p>
-<p>   select * from t1 where id+1&gt;1121-1 不会使用索引 </p>
-<p>表必须有主键，建议使用业务主键</p>
-<p>单张表中索引数量不超过5个 </p>
-<p>单张表中索引字段不超过5个</p>
-<p>字符串索引使用前缀索引，前缀长度不超过10个字符。（看数据分布不是绝对的10字符）</p>
-<p>是否分表 建议单表1000w</p>
-<p>分表方式 </p>
-<p>​    取模 存储均匀分表均匀</p>
-<p>   按时间：冷热库</p>
-<p>分库</p>
-<p>   按业务垂直拆分 为服务垂直分</p>
-<p>   水平拆分多个库 按数据量  </p>
-<h2 id="千亿级海量数据高并发场景分库分表实践落地方案"><a href="#千亿级海量数据高并发场景分库分表实践落地方案" class="headerlink" title="千亿级海量数据高并发场景分库分表实践落地方案"></a>千亿级海量数据高并发场景分库分表实践落地方案</h2><h3 id="分库分表方案"><a href="#分库分表方案" class="headerlink" title="分库分表方案"></a>分库分表方案</h3><p>   按业务垂直拆分 为服务垂直分 product DB user DB 款表拆多个表</p>
-<p>  eg：user表后64为swich long 以0、1标记一些是否上传等信息</p>
-<p>   拆分为userdata和userswich两表</p>
-<p>  水平拆分多个库 按数据量 </p>
-<p>eg：100000000 怎么存，分表就可以了，取模，读写均匀，热点表按照时间分</p>
-<h3 id="分库分表—案例分享"><a href="#分库分表—案例分享" class="headerlink" title="分库分表—案例分享"></a>分库分表—案例分享</h3><h4 id="用户库分表"><a href="#用户库分表" class="headerlink" title="用户库分表"></a>用户库分表</h4><img src="/2021/07/20/%E4%BC%81%E4%B8%9A%E5%8D%83%E4%BA%BF%E7%BA%A7%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA%E6%8F%90%E7%82%BC%E7%AF%87/3.jpg" class="" title="用户库分表">
-
-<p>存储均匀&amp;访问均匀 -&gt; 取模</p>
-<p>不能利索当然等以uid进行取模，要看访问频率，eg 访问频率uid：phone = 1:99 那么就要以 phone建立一个map，找uid 再去计算存储等具体位置，具体表</p>
-<h4 id="商品库分表"><a href="#商品库分表" class="headerlink" title="商品库分表"></a>商品库分表</h4><img src="/2021/07/20/%E4%BC%81%E4%B8%9A%E5%8D%83%E4%BA%BF%E7%BA%A7%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA%E6%8F%90%E7%82%BC%E7%AF%87/4.jpg" class="" title="商品库分表">
-
-<p>这样一个uid用户添加的商品有可能会平均分不到个个表中，查询效率低下 </p>
-<p>解决方案</p>
-<img src="/2021/07/20/%E4%BC%81%E4%B8%9A%E5%8D%83%E4%BA%BF%E7%BA%A7%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA%E6%8F%90%E7%82%BC%E7%AF%87/5.jpg" class="" title="解决方案">
-
-<p>pub uid 和pid是一样的，按照pub取模分表，这样一个用户上传的所有商品都在一个表，映射表页不需要了，查询效率页提高了</p>
-<h4 id="系统消息库分表"><a href="#系统消息库分表" class="headerlink" title="系统消息库分表"></a>系统消息库分表</h4><p>时效性</p>
-<p>冷热数据拆分</p>
-<p>按月拆分，一个表存这个月和上个月的数据（要查30天的数据），双写插入</p>
-<h4 id="表分少了怎么办"><a href="#表分少了怎么办" class="headerlink" title="表分少了怎么办"></a>表分少了怎么办</h4><p>尽量减少分表不够的情况，一次性分够了</p>
-<p>如果分少了</p>
-<img src="/2021/07/20/%E4%BC%81%E4%B8%9A%E5%8D%83%E4%BA%BF%E7%BA%A7%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA%E6%8F%90%E7%82%BC%E7%AF%87/6.jpg" class="" title="扩容">
-
-<p>成倍扩大 这样就有两个DB，有空删掉SLave一半的重复数据就行 </p>
-
+<h2 id="解法二："><a href="#解法二：" class="headerlink" title="解法二："></a>解法二：</h2><p>哈希表，哈希表存储所有的值和数组中的位置，计算每个位置的和target的差值，看哈希表中是否有对应的值</p>
+<pre><code class="java">class Solution &#123;
+    public int[] twoSum(int[] nums, int target) &#123;
+        int[] result = new int[2];
+       HashMap&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
+        for(int i = 0;i &lt; nums.length;i++)&#123;
+            map.put(nums[i],i);
+        &#125;
+        for(int j = 0;j &lt; nums.length;j++)&#123;
+           int diff = target - nums[j];
+           if(map.containsKey(diff) &amp;&amp; map.get(diff) != j)&#123;
+               result[0] = j;
+               result[1] = map.get(diff);
+               return result;
+           &#125;
+        &#125;
+        return result;
+       
+    &#125;
+&#125;
+</code></pre>
+<img src="/2021/07/22/leecode001/2.jpg" class="" title="哈希表">  O（n）
                 
             </div>
             <hr/>
@@ -595,7 +543,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lfssst.github.io/2021/07/20/%E4%BC%81%E4%B8%9A%E5%8D%83%E4%BA%BF%E7%BA%A7%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA%E6%8F%90%E7%82%BC%E7%AF%87/">https://lfssst.github.io/2021/07/20/%E4%BC%81%E4%B8%9A%E5%8D%83%E4%BA%BF%E7%BA%A7%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA%E6%8F%90%E7%82%BC%E7%AF%87/</a>
+                    <a href="https://lfssst.github.io/2021/07/22/leecode001/">https://lfssst.github.io/2021/07/22/leecode001/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -633,8 +581,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/MySQL/">
-                                    <span class="chip bg-color">MySQL</span>
+                                <a href="/tags/leecode%E5%88%B7%E9%A2%98/">
+                                    <span class="chip bg-color">leecode刷题</span>
                                 </a>
                             
                         </div>
@@ -806,9 +754,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/07/22/leecode001/">
                     <div class="card-image">
@@ -826,9 +775,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -837,6 +786,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -855,13 +805,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/15/MySQL%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%B7%B5/">
+                <a href="/2021/07/20/%E4%BC%81%E4%B8%9A%E5%8D%83%E4%BA%BF%E7%BA%A7%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%8F%91%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA%E6%8F%90%E7%82%BC%E7%AF%87/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="MySQL海量数据设计实践">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="企业千亿级海量数据并发分库分表设计方法论提炼篇">
                         
-                        <span class="card-title">MySQL海量数据设计实践</span>
+                        <span class="card-title">企业千亿级海量数据并发分库分表设计方法论提炼篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -872,7 +822,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-20
                             </span>
                         <span class="publish-author">
                             
